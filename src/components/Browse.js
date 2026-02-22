@@ -14,12 +14,12 @@ const Browse = () => {
   usePopularMovies();
   useTopRatedMovies();
   return (
-    <div>
+    <div className="w-full min-h-screen flex flex-col">
       <Header />
       {showGPTSearch ? (
         <GPTSearch />
       ) : (
-        <div className="bg-black text-white w-full overflow-x-hidden">
+        <div className="bg-black text-white w-full flex-grow overflow-x-hidden">
           <MainContainer />
           <SecondaryContainer />
         </div>

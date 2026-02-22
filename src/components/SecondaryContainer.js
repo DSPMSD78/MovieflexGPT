@@ -6,7 +6,7 @@ const SecondaryContainer = () => {
 
   return (
     <div className="bg-black">
-      <div className="-mt-16 sm:-mt-24 md:-mt-32 lg:-mt-40 relative z-90">
+      <div className="-mt-14 sm:-mt-20 md:-mt-28 lg:-mt-36 relative z-10 pb-4">
         {!movies.nowPlayingMovies ? (
           <div>Loading...</div>
         ) : (

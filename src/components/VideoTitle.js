@@ -12,7 +12,7 @@ const VideoTitle = ({ title, overview }) => {
         </p>
         <div className="flex gap-2 sm:gap-3 mt-2 sm:mt-4 md:mt-6">
           <button className="bg-white text-black text-xs sm:text-sm md:text-base font-bold px-3 sm:px-6 md:px-8 py-1 sm:py-2 md:py-3 rounded-lg hover:bg-opacity-75 transition whitespace-nowrap">
-            ▶ Play
+            Play
           </button>
           <button className="bg-gray-500 bg-opacity-50 text-xs sm:text-sm md:text-base font-bold px-3 sm:px-6 md:px-8 py-1 sm:py-2 md:py-3 rounded-lg hover:bg-opacity-75 transition whitespace-nowrap">
             ⓘ Info
