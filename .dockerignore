@@ -1,5 +1,22 @@
-node_modules;
-npm - debug.log.git.gitignore;
-README.md.env.DS_Store.vscode.idea;
-coverage;
-dist;
+node_modules
+npm-debug.log
+npm-err.log
+.git
+.gitignore
+README.md
+.DS_Store
+.vscode
+.idea
+.vs
+coverage
+dist
+build
+.firebase
+.firebaserc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.eslintcache
+.test-cache
+.cache
