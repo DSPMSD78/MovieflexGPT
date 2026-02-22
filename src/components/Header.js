@@ -7,7 +7,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { logoutUser } from "../utils/userSlice";
-import { toggleGPTSearch } from "../utils/gptSlice";
+import { clearSuggestions, toggleGPTSearch } from "../utils/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLang } from "../utils/configSlice";
 
@@ -20,6 +20,7 @@ const Header = () => {
 
   const handleSearch = () => {
     dispatch(toggleGPTSearch());
+    dispatch(clearSuggestions());
   };
 
   useEffect(() => {
@@ -58,7 +59,10 @@ const Header = () => {
   return (
     <header className="absolute top-0 left-0 w-full z-10 bg-gradient-to-b from-black">
       <div className="mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center">
+        <div
+          className="flex cursor-pointer items-center"
+          onClick={() => navigate("/")}
+        >
           <h1
             className="text-red-600 font-extrabold text-2xl sm:text-3xl tracking-tighter uppercase italic"
             style={{
