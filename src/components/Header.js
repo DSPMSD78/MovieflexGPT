@@ -57,14 +57,14 @@ const Header = () => {
   };
 
   return (
-    <header className="absolute top-0 left-0 w-full z-10 bg-gradient-to-b from-black">
-      <div className="mx-auto px-4 py-3 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black">
+      <div className="mx-auto px-3 sm:px-4 md:px-6 py-2 sm:py-3 flex items-center justify-between">
         <div
-          className="flex cursor-pointer items-center"
+          className="flex cursor-pointer items-center flex-shrink-0"
           onClick={() => navigate("/")}
         >
           <h1
-            className="text-red-600 font-extrabold text-2xl sm:text-3xl tracking-tighter uppercase italic"
+            className="text-red-600 font-extrabold text-lg sm:text-2xl md:text-3xl tracking-tighter uppercase italic"
             style={{
               fontFamily: "Helvetica, Arial, sans-serif",
               transform: "scaleY(1.4) scaleX(0.9)",
@@ -76,11 +76,11 @@ const Header = () => {
         </div>
 
         {user && (
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
             {showGPTSearch && (
               <select
                 value={lang}
-                className="p-2 m-2 bg-gray-900 text-white"
+                className="px-2 sm:px-3 py-1 sm:py-2 bg-gray-900 text-white text-xs sm:text-sm rounded"
                 onChange={(e) => handleLangChange(e)}
               >
                 {SUPPORTED_LANGUAGES.map((lang) => (
@@ -92,22 +92,22 @@ const Header = () => {
             )}
 
             <button
-              className="hidden sm:inline-block bg-white text-black font-bold px-3 py-1 rounded-lg hover:opacity-50"
+              className="inline-block bg-white text-black font-bold px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-lg hover:opacity-50 transition"
               onClick={handleSearch}
             >
-              {showGPTSearch ? "Home page" : "GPT Search"}
+              {showGPTSearch ? "Home" : "GPT"}
             </button>
             <img
-              className="w-10 h-10 rounded-full object-cover border-2 border-transparent hover:border-white"
+              className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full object-cover border-2 border-transparent hover:border-white transition"
               alt="userIcon"
               src={user.photoURL}
             />
-            <p className="hidden md:inline-block font-bold text-white">
+            <p className="hidden lg:inline-block font-bold text-white text-xs sm:text-sm">
               {user.displayName}
             </p>
             <button
               onClick={handleSignOut}
-              className="text-white font-semibold px-3 py-1 rounded-lg border border-white/20 hover:bg-white hover:text-black"
+              className="text-white font-semibold text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-lg border border-white/20 hover:bg-white hover:text-black transition"
             >
               Sign Out
             </button>

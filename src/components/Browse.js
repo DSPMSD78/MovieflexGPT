@@ -16,16 +16,14 @@ const Browse = () => {
   return (
     <div>
       <Header />
-      <div className=" text-white w-screen min-h-screen">
-        {showGPTSearch ? (
-          <GPTSearch />
-        ) : (
-          <>
-            <MainContainer />
-            <SecondaryContainer />
-          </>
-        )}
-      </div>
+      {showGPTSearch ? (
+        <GPTSearch />
+      ) : (
+        <div className="bg-black text-white w-full overflow-x-hidden">
+          <MainContainer />
+          <SecondaryContainer />
+        </div>
+      )}
     </div>
   );
 };
